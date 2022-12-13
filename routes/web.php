@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// jika menggunakan Laravel 8 atau 9. maka penulisan route nya ada perubahan
+Route::get('/', 'App\Http\Controllers\DashboardController@index');
+
+
