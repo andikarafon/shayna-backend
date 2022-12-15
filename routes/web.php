@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\DashboardController@index');
 
 
-
-Auth::routes();
+// penambahan register false adalah supaya halaman register tidak bisa diakses, karena admin hanya kita saja, tidak ada yang lain.
+Auth::routes(['register' => false]);
 
 
