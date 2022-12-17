@@ -23,29 +23,7 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tr>
-                    <td>1</td>
-                    <td>Andika Rafon</td>
-                    <td>Buyer</td>
-                    <td>$100</td>
-                    <td>10</td>
-                    <td>
-                        <a href="#" class="btn btn-info btn-sm">
-                            <i class="fa fa-picture-o"></i>
-                        </a>
-                        <a href="#" class="btn btn-primary btn-sm">
-                            <i class="fa fa-pencil-o"></i>
-                        </a>
-                        <form action="#" method="post" class="d-inline">
-                            @method('delete')
-                            <button class="btn btn-danger btn-sm">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-                {{-- dipake nanti --}}
-                {{-- <tbody>
+                <tbody>
                   @forelse ($items as $item)
                     <tr>
                       <td>{{ $item->id }}</td>
@@ -54,13 +32,16 @@
                       <td>{{ $item->price }}</td>
                       <td>{{ $item->quantity }}</td>
                       <td>
-                        <a href="{{ route('products.gallery', $item->id) }}" class="btn btn-info btn-sm">
+                        {{-- <a href="{{ route('products.gallery', $item->id) }}" class="btn btn-info btn-sm"> --}}
+                        <a href="#" class="btn btn-info btn-sm">
                           <i class="fa fa-picture-o"></i>
                         </a>
-                        <a href="{{ route('products.edit', $item->id) }}" class="btn btn-primary btn-sm">
+                        {{-- <a href="{{ route('products.edit', $item->id) }}" class="btn btn-primary btn-sm"> --}}
+                        <a href="#" class="btn btn-info btn-sm">
                           <i class="fa fa-pencil"></i>
                         </a>
-                        <form action="{{ route('products.destroy', $item->id) }}" 
+                        {{-- <form action="{{ route('products.destroy', $item->id) }}"  --}}
+                        <form action="#" 
                               method="post" 
                               class="d-inline">
                           @csrf
@@ -78,9 +59,7 @@
                         </td>
                       </tr>
                   @endforelse
-                </tbody> --}}
-
-
+                </tbody>
               </table>
             </div>
           </div>
