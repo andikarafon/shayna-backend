@@ -77,7 +77,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Product::findOrFail($id);
+
+        return view('pages.products.edit')->with([
+                'item' => $item
+        ]);
     }
 
     /**
@@ -87,9 +91,19 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
-        //
+        $data = $request->all();
+
+        // slug adalah jika misalnya Unikelo Tshirt maka akan menjadi unikelo-tshirt (semua lower case dan spasi diganti dengan -)
+        $data['slug'] = Str::slug($request->name);
+
+        $item = Product::findOrFail($id);
+        $item->update($data);
+
+        return redirect()->route('products.index');
+
+
     }
 
     /**
@@ -100,6 +114,11 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Product::findOrFail($id);
+
+        $item->delete();
+
+        return redirect()->route('products.index');
+
     }
 }
