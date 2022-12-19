@@ -24,7 +24,7 @@ class ProductGalleryRequest extends FormRequest
     public function rules()
     {
         return [
-            'products_id' => 'required|integer|exists:products, id', //jika id nya ada maka error
+            'products_id' => 'required|integer|exists:products,id', //jika id nya ada maka error, dan jangan ada spasi mulai dari tanda koma
             'photo' => 'required|image',
             'is_default' => 'boolean'
         ];
