@@ -20,8 +20,12 @@ Route::get('/', 'App\Http\Controllers\DashboardController@index')->name('dashboa
 // penambahan register false adalah supaya halaman register tidak bisa diakses, karena admin hanya kita saja, tidak ada yang lain.
 Auth::routes(['register' => false]);
 
+Route::get('products/{id}/gallery', 'App\Http\Controllers\ProductController@gallery')
+    ->name('products.gallery');
 Route::resource('products', 'App\Http\Controllers\ProductController');
 
 Route::resource('product-galleries', 'App\Http\Controllers\ProductGalleryController');
+
+Route::resource('transactions', 'App\Http\Controllers\TransactionController');
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductGallery;
 
 use App\Http\Requests\ProductRequest;
 
@@ -125,7 +126,24 @@ class ProductController extends Controller
 
         $item->delete();
 
+        ProductGallery::where('products_id', $id)->delete();
+
         return redirect()->route('products.index');
 
+    }
+
+
+    // function baru untuk produk
+    public function gallery(Request $request, $id)
+    {
+        $product = Product::findorFail($id);
+        $items = ProductGallery::with('product')
+            ->where('products_id', $id)
+            ->get();
+
+        return view('pages.products.gallery')->with([
+            'product' => $product,
+            'items' => $items
+        ]);
     }
 }
