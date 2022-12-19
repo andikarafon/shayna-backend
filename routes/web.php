@@ -22,4 +22,6 @@ Auth::routes(['register' => false]);
 
 Route::resource('products', 'App\Http\Controllers\ProductController');
 
+Route::resource('product-galleries', 'App\Http\Controllers\ProductGalleryController');
+
 
