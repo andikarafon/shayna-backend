@@ -44,6 +44,29 @@ class ProductController extends Controller
 
         }
 
+        // ID dan slug, data cuma 1, jadi pakai cara di atas
+        // buat yang lain bisa dengan dibuat kondisi
+
+        $product = Product::with('galleries');
+
+        if($name)
+            $product->where('name', 'like', '%'. $name .'%');
+        
+        if($type)
+             $product->where('name', 'like', '%'. $type .'%');
+        
+        if($price_from)
+            $product->where('price', '>=', $price_from);
+        
+        if($price_to)
+            $product->where('price', '<=', $price_to);
+        
+        return 
+            ResponseFormatter::success(
+                $product->paginate($limit),
+                'Data List Produk berhasil diambil'
+            );
+
 
     }
 

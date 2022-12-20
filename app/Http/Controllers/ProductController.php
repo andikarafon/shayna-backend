@@ -136,7 +136,7 @@ class ProductController extends Controller
     // function baru untuk produk
     public function gallery(Request $request, $id)
     {
-        $product = Product::findorFail($id);
+        $product = Product::findOrFail($id);
         $items = ProductGallery::with('product')
             ->where('products_id', $id)
             ->get();
