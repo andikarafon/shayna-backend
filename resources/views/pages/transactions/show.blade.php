@@ -32,7 +32,7 @@
                     <th>Tipe</th>
                     <th>Harga</th>
                 </tr>
-                @foreach($item->details as $detail)
+                @foreach($item->detail as $detail)
                     <tr>
                         <td>{{ $detail->product->name }}</td>
                         <td>{{ $detail->product->type }}</td>

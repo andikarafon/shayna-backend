@@ -1,6 +1,6 @@
  <!-- Scripts -->
  {{-- pakai jquery versi terbaru --}}
- <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
@@ -229,19 +229,19 @@
      });
  </script>
 
- {{-- buat memunculkan modal --}}
- <script>
+
+
+<script>
     jQuery(document).ready(function($){
-        // baca dokumentasi di bootstrap mengenai ini
         $('#mymodal').on('show.bs.modal', function(e){
             var button = $(e.relatedTarget);
             var modal = $(this);
-            // ambil dari index.blade.php
-            modal.find('.modal-body').load(button.data("remote");)
-            modal.find('.modal-title').html(button.data("title");)
+
+            modal.find('.modal-body').load(button.data("remote"));
+            modal.find('.modal-title').html(button.data("title"));
         });
     });
- </script>
+</script>
 
 <div class="modal" id="mymodal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
@@ -258,4 +258,3 @@
         </div>
     </div>
 </div>
-

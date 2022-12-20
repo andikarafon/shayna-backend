@@ -62,7 +62,7 @@ class TransactionController extends Controller
         //details.product adalah relasi yang ada di Model Transaction dan TransactionDetail
         $item = Transaction::with('detail.product')->findOrFail($id);
 
-        return view('pages.transaactions.show')->with([
+        return view('pages.transactions.show')->with([
             'item' => $item
         ]);
     }
@@ -75,7 +75,11 @@ class TransactionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Transaction::findOrFail($id);
+
+        return view('pages.transactions.edit')->with([
+            'item' => $item
+        ]);
     }
 
     /**
@@ -87,7 +91,12 @@ class TransactionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $item = Transaction::findOrFail($id);
+        $item->update($data);
+
+        return redirect()->route('transactions.index');
     }
 
     /**

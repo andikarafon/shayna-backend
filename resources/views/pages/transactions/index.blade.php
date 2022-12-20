@@ -54,14 +54,14 @@
                             <i class="fa fa-times"></i>
                           </a>     --}}
                         @endif
-                        <a href="#mymodal" 
-                          data-remote = "{{ route('transactions.show', $item->id) }}"
-                          data-toggle = "modal"
-                          data-target = "#mymodal"
-                          data-title  = "Detail Transaksi {{ $item->uuid }}"
-                          class="btn btn-primary btn-sm">
-                          <i class="fa fa-eye"></i>
-                        </a>
+                        <a href="#mymodal"
+                            data-remote="{{ route('transactions.show', $item->id) }}"
+                            data-toggle="modal"
+                            data-target="#mymodal"
+                            data-title="Detail Transaksi {{ $item->uuid }}"
+                            class="btn btn-info btn-sm">
+                            <i class="fa fa-eye"></i>
+                          </a>
                         <a href="{{ route('transactions.edit', $item->id) }}" class="btn btn-primary btn-sm">
                           <i class="fa fa-pencil"></i>
                         </a>

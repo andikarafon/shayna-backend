@@ -21,7 +21,7 @@ class Transaction extends Model
         // jika nanti ada field yang tidak mau ditampilkan
     ];
 
-    public function details()
+    public function detail()
     {
         return $this->hasMany(TransactionDetail::class, 'transactions_id');
     }
