@@ -43,20 +43,20 @@
         </td>
     </tr>
 </table>
-{{-- <div class="row">
+<div class="row">
     <div class="col-4">
-        <a href="{{ route('transaction.status', $item->id) }}?status=SUCCESS" class="btn btn-success btn-block">
+        <a href="{{ route('transactions.status', $item->id) }}?status=SUCCESS" class="btn btn-success btn-block">
             <i class="fa fa-check fa-fw">Set Sukses</i>
         </a>
     </div>
     <div class="col-4">
-        <a href="{{ route('transaction.status', $item->id) }}?status=FAILED" class="btn btn-warning btn-block">
+        <a href="{{ route('transactions.status', $item->id) }}?status=FAILED" class="btn btn-danger btn-block">
             <i class="fa fa-times fa-fw">Set Gagal</i>
         </a>
     </div>
     <div class="col-4">
-        <a href="{{ route('transaction.status', $item->id) }}?status=PENDING" class="btn btn-info btn-block">
-            <i class="fa fa-spinner fa-fw">Set Sukses</i>
+        <a href="{{ route('transactions.status', $item->id) }}?status=PENDING" class="btn btn-info btn-block">
+            <i class="fa fa-spinner fa-fw">Set Pending</i>
         </a>
     </div>
-</div> --}}
+</div>

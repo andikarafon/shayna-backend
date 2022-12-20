@@ -107,6 +107,29 @@ class TransactionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Transaction::findOrFail($id);
+
+        $item->delete();
+
+        //menghapus juga yang di transaction_detail
+        TransactionDetail::where('transactions_id', $id)->delete();
+
+        return redirect()->route('transactions.index');
+    }
+
+    public function setStatus(Request $request, $id)
+    {
+        $request->validate([
+            'status' => 'required|in:PENDING,SUCCESS,FAILED'
+            // Hanya akan memproses 3 status ini saja, di luar itu tidak terproses
+        ]);
+
+        $item = Transaction::findOrFail($id);
+        $item->transaction_status = $request->status;
+        $item->save();
+
+        return redirect()->route('transactions.index');
+
+
     }
 }

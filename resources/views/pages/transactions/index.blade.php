@@ -33,27 +33,27 @@
                       <td>{{ $item->number }}</td>
                       <td>${{ $item->transaction_total }}</td>
                       <td>
-                        @if($item->transaction_status = 'PENDING')
-                            <span class="badge badge-info">
-                        @elseif($item->transaction_status = 'SUCCESS')
-                            <span class="badge badge-info">
-                        @elseif($item->transaction_status = 'FAILED')
-                            <span class="badge badge-info">
+                        @if($item->transaction_status == 'PENDING')
+                        <span class="badge badge-info">
+                        @elseif($item->transaction_status == 'SUCCESS')
+                          <span class="badge badge-success">
+                        @elseif($item->transaction_status == 'FAILED')
+                          <span class="badge badge-danger">
                         @else
-                        <span>
+                          <span>
                         @endif
                           {{ $item->transaction_status }}
                         </span>
                       </td>
                       <td>
-                        @if($item->transaction_status = 'PENDING')
-                          {{-- <a href="{{ route('transactions.status', $item->id) }}?status=SUCCESS" class="btn btn-success btn-sm">
-                            <i class="fa fa-check"></i>
-                          </a>
-                          <a href="{{ route('transactions.status', $item->id) }}?status=FAILED" class="btn btn-warning btn-sm">
-                            <i class="fa fa-times"></i>
-                          </a>     --}}
-                        @endif
+                        @if($item->transaction_status == 'PENDING')
+                            <a href="{{ route('transactions.status', $item->id) }}?status=SUCCESS" class="btn btn-success btn-sm">
+                              <i class="fa fa-check"></i>
+                            </a>
+                            <a href="{{ route('transactions.status', $item->id) }}?status=FAILED" class="btn btn-danger btn-sm">
+                              <i class="fa fa-times"></i>
+                            </a>
+                          @endif
                         <a href="#mymodal"
                             data-remote="{{ route('transactions.show', $item->id) }}"
                             data-toggle="modal"
