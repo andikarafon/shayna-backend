@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 // jika menggunakan Laravel 8 atau 9. maka penulisan route nya ada perubahan
 Route::get('/', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 
@@ -30,5 +29,4 @@ Route::resource('product-galleries', 'App\Http\Controllers\ProductGalleryControl
 Route::get('transactions/{id}/set-status', 'App\Http\Controllers\TransactionController@setStatus')
     ->name('transactions.status');
 Route::resource('transactions', 'App\Http\Controllers\TransactionController');
-
 

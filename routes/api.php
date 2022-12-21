@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('products', 'App\Http\Controllers\API\ProductController@all');
-
 Route::post('checkout', 'App\Http\Controllers\API\CheckoutController@checkout');
-
 Route::get('transactions/{id}', 'App\Http\Controllers\API\TransactionController@get');
+
+
