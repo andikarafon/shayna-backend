@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 // jika menggunakan Laravel 8 atau 9. maka penulisan route nya ada perubahan
 Route::get('/', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 
-
 // penambahan register false adalah supaya halaman register tidak bisa diakses, karena admin hanya kita saja, tidak ada yang lain.
 Auth::routes(['register' => false]);
 
